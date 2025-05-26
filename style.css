@@ -1,0 +1,63 @@
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at center, #ffe6f0, #fbeaff, #ffe6f0);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+#sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ffcc33, #ff9900);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 20px rgba(255, 153, 0, 0.6);
+  transform: translate(-50%, -50%);
+  animation: pulse 4s infinite ease-in-out;
+  z-index: 2;
+}
+
+.planet {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.popup {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 30px 20px rgba(255, 153, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 50px 30px rgba(255, 153, 0, 0.9);
+  }
+}
