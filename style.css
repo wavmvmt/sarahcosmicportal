@@ -1,21 +1,20 @@
 
-body, html {
+body {
   margin: 0;
-  padding: 0;
   overflow: hidden;
-  height: 100%;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
-#background {
+canvas#bg {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('background2.png') no-repeat center center / cover;
-  z-index: -3;
+  z-index: 0;
 }
 
-.sun {
+#sun {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,43 +25,59 @@ body, html {
   box-shadow: 0 0 40px 20px rgba(255, 153, 0, 0.6);
   transform: translate(-50%, -50%);
   animation: pulse 4s infinite ease-in-out;
-  z-index: 2;
+  z-index: 1;
 }
 
-#planet-container {
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 30px 20px rgba(255, 153, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 50px 30px rgba(255, 153, 0, 0.9);
+  }
+}
+
+.orbit {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  z-index: 1;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .planet {
   position: absolute;
   width: 20px;
   height: 20px;
+  background: cyan;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  z-index: 2;
 }
 
-.mercury { background: #bbb; animation: orbit 10s linear infinite; }
-.venus   { background: #f7c6c7; animation: orbit 12s linear infinite; }
-.earth   { background: #49baff; animation: orbit 14s linear infinite; }
-.mars    { background: #ff6b6b; animation: orbit 16s linear infinite; }
-.jupiter { background: #fcbf49; animation: orbit 18s linear infinite; }
-.saturn  { background: #dcd6f7; animation: orbit 20s linear infinite; }
-.uranus  { background: #a0e9fd; animation: orbit 22s linear infinite; }
-.neptune { background: #93b7ff; animation: orbit 24s linear infinite; }
-.pluto   { background: #8e44ad; animation: orbit 26s linear infinite; }
-.moon    { background: #fff; animation: orbit 28s linear infinite; }
-.chiron  { background: #00ffcc; animation: orbit 30s linear infinite; }
-
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+.popup {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 12px;
+  color: #fff;
+  z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 30px 20px rgba(255, 153, 0, 0.6); }
-  50% { box-shadow: 0 0 50px 30px rgba(255, 153, 0, 0.9); }
+.popup.hidden {
+  display: none;
+}
+
+.phone-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #ff99cc;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
 }

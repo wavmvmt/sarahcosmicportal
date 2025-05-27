@@ -4,15 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarah's 3D Cosmic Portal</title>
-  <style>
-    body { margin: 0; overflow: hidden; background: radial-gradient(ellipse at center, #ffe6f0, #fbeaff, #ffe6f0); }
-    canvas { display: block; }
-  </style>
+  <title>Sarah's Cosmic Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="main.js"></script>
+  <canvas id="bg"></canvas>
+  <div id="sun"></div>
+  <div id="orbits"></div>
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h2 id="popup-title"></h2>
+      <p id="popup-message"></p>
+      <ul id="popup-insights"></ul>
+      <a href="#" class="phone-button">📞 Book 15-min Call</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
