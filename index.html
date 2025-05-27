@@ -3,23 +3,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sarah's Cosmic Portal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <div id="sun"></div>
-  <div id="orbits"></div>
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <h2 id="popup-title"></h2>
-      <p id="popup-message"></p>
-      <ul id="popup-insights"></ul>
-      <a href="#" class="phone-button">📞 Book 15-min Call</a>
-    </div>
+  <div id="portal">
+    <div class="sun"></div>
+    <div class="planet" style="top: 10%; left: 50%;" data-name="Mercury"></div>
+    <div class="planet" style="top: 20%; left: 70%;" data-name="Venus"></div>
+    <div class="planet" style="top: 40%; left: 80%;" data-name="Earth"></div>
+    <div class="planet" style="top: 60%; left: 70%;" data-name="Mars"></div>
+    <div class="planet" style="top: 70%; left: 50%;" data-name="Jupiter"></div>
+    <div class="planet" style="top: 60%; left: 30%;" data-name="Saturn"></div>
+    <div class="planet" style="top: 40%; left: 20%;" data-name="Uranus"></div>
+    <div class="planet" style="top: 20%; left: 30%;" data-name="Neptune"></div>
+    <div class="planet" style="top: 35%; left: 50%;" data-name="Moon"></div>
+    <div class="planet" style="top: 50%; left: 25%;" data-name="Pluto"></div>
+    <div class="planet" style="top: 50%; left: 75%;" data-name="Chiron"></div>
   </div>
+
+  <div class="popup" id="popup">
+    <p>Book your free session 🌟</p>
+    <a href="#" target="_blank">Tap to Book</a>
+    <button id="closePopup">Close</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
