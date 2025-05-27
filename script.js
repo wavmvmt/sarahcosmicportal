@@ -128,5 +128,12 @@ el.addEventListener("click", () => {
   popup.style.top = el.style.top;
   popup.classList.add("show");
   });
+  
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".planet") && !e.target.closest(".popup")) {
+    popup.classList.remove("show");
+  }
+});
+
 });
 
