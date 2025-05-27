@@ -1,4 +1,3 @@
-
 const planets = [
   { name: "22K Package", color: "#fcbf49", tooltip: "💰 Jupiter: Expansion & Abundance" },
   { name: "Calendar", color: "#dcd6f7", tooltip: "📅 Saturn: Sacred Time Container" },
