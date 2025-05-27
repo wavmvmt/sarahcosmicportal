@@ -108,35 +108,8 @@ body {
   50% { transform: scale(2); opacity: 1; }
   75% { transform: scale(1.5); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
-/* Orbit animation setup */
-.orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
-  pointer-events: none;
-  animation-timing-function: linear;
-}
 
-.orbit .planet {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: breathe 4s ease-in-out infinite;
-}
-
-/* Breathing pulse effect */
-@keyframes breathe {
-  0%, 100% {
-    transform: translateX(-50%) scale(1);
-  }
-  50% {
-    transform: translateX(-50%) scale(1.08);
-  }
-}
-
-/* Orbit animation setup */
+  /* Orbit animation setup */
 .orbit {
   position: absolute;
   top: 50%;
@@ -175,3 +148,4 @@ body {
   top: 0;
   left: 0;
 }
+
