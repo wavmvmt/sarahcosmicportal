@@ -65,42 +65,32 @@ body {
 
 .popup {
   position: absolute;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 16px 20px;
-  max-width: 240px;
-  font-size: 14px;
-  z-index: 5;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.4);
-}
-
-.popup ul {
-  padding-left: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.5);
+  font-family: 'Quicksand', sans-serif;
+  max-width: 220px;
+  display: none;
+  z-index: 100;
+  transform: translate(-50%, -50%);
 }
 
 .popup.show {
-  pointer-events: auto;
-  opacity: 1;
+  display: block;
 }
 
-.popup .phone-icon {
+.phone-icon {
   width: 30px;
-  height: 30px;
-  margin-top: 12px;
-  animation: vibrate 1.2s infinite;
-  filter: drop-shadow(0 0 5px #00ffcc);
-  cursor: pointer;
+  margin-top: 10px;
+  animation: vibrate 0.8s infinite;
 }
 
 @keyframes vibrate {
   0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(-5deg); }
-  75% { transform: rotate(5deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
   100% { transform: rotate(0deg); }
 }
+
