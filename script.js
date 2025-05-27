@@ -1,4 +1,3 @@
-
 const planets = [
   { name: "22K Package", color: "#fcbf49", tooltip: "💰 Jupiter: Expansion & Abundance" },
   { name: "Calendar", color: "#dcd6f7", tooltip: "📅 Saturn: Sacred Time Container" },
@@ -17,9 +16,6 @@ const planets = [
 
 const container = document.getElementById("planet-container");
 const sun = document.getElementById("sun");
-const popup = document.getElementById("popup");
-const popupTitle = document.getElementById("popup-title");
-const popupTooltip = document.getElementById("popup-tooltip");
 
 planets.forEach((planet, index) => {
   const orbit = document.createElement("div");
@@ -36,25 +32,14 @@ planets.forEach((planet, index) => {
   el.title = planet.tooltip;
   el.textContent = planet.name;
 
-  el.addEventListener("click", (e) => {
-    popup.style.display = "block";
-    popupTitle.textContent = planet.name;
-    popupTooltip.textContent = planet.tooltip;
-    popup.style.left = `${e.pageX}px`;
-    popup.style.top = `${e.pageY}px`;
-  });
-
   orbit.appendChild(el);
   container.appendChild(orbit);
 });
 
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
-
+// YouTube modal
 sun.addEventListener("click", () => {
   document.getElementById("video-modal").style.display = "flex";
 });
 function closeModal() {
   document.getElementById("video-modal").style.display = "none";
-}
+}   
