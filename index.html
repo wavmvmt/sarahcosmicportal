@@ -2,34 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarah's Cosmic Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="universe">
-    <div class="sun"></div>
-    <div class="planet" id="mercury" style="top: 20%; left: 60%;">Mercury</div>
-    <div class="planet" id="venus" style="top: 35%; left: 75%;">Venus</div>
-    <div class="planet" id="earth" style="top: 50%; left: 85%;">Earth</div>
-    <div class="planet" id="mars" style="top: 65%; left: 75%;">Mars</div>
-    <div class="planet" id="jupiter" style="top: 80%; left: 60%;">Jupiter</div>
-    <div class="planet" id="saturn" style="top: 80%; left: 40%;">Saturn</div>
-    <div class="planet" id="uranus" style="top: 65%; left: 25%;">Uranus</div>
-    <div class="planet" id="neptune" style="top: 50%; left: 15%;">Neptune</div>
-    <div class="planet" id="pluto" style="top: 35%; left: 25%;">Pluto</div>
-    <div class="planet" id="moon" style="top: 25%; left: 40%;">Moon</div>
-    <div class="planet" id="chiron" style="top: 50%; left: 50%;">Chiron</div>
-    <div class="planet" id="blackhole" style="top: 50%; left: 50%; background:black;">Blackhole</div>
+  <div id="portal">
+    <img src="background.png" alt="Cosmic Background" id="bg" />
+    <div id="sun"></div>
+    <div id="planet-container"></div>
   </div>
 
-  <div id="popup" class="popup hidden">
-    <img src="assets/phone.jpeg" alt="Phone Icon" class="phone-icon"/>
-    <p>Book your free session 🌟</p>
-    <a href="#">Tap to Book</a>
-    <button onclick="closePopup()">Close</button>
+  <div class="popup" id="popup">
+    <h2 id="popup-name"></h2>
+    <p id="popup-message"></p>
+    <ul id="popup-insights"></ul>
+    <a href="https://booking-link.com" target="_blank">
+      <img src="phone_icon.png" alt="Call Icon" class="phone-icon" />
+    </a>
+    <button id="closePopup">Close</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
