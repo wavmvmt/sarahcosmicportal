@@ -192,15 +192,25 @@ const planets = [
 const container = document.getElementById("planet-container");
 
 planets.forEach((planet, index) => {
+  // Create orbit wrapper
+  const orbit = document.createElement("div");
+  orbit.classList.add("orbit");
+
+  // Create planet element
   const el = document.createElement("div");
   el.classList.add("planet");
-  el.style.left = `calc(50% + ${planet.x}px)`;
-  el.style.top = `calc(50% + ${planet.y}px)`;
   el.style.background = planet.color;
   el.textContent = planet.name;
-  container.appendChild(el);
 
-  // Create a popup per planet
+  // Append planet to orbit wrapper
+  orbit.appendChild(el);
+  container.appendChild(orbit);
+
+  // Orbit animation with unique timing & radius
+  orbit.style.animation = `orbit ${10 + index * 2}s linear infinite`;
+  orbit.style.transform = `rotate(${index * 30}deg)`; // space them out
+
+  // Popup setup
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = `
@@ -211,24 +221,14 @@ planets.forEach((planet, index) => {
   `;
   container.appendChild(popup);
 
-  // Show popup on hover
-  el.addEventListener("mouseenter", () => {
-    popup.classList.add("show");
-    popup.style.left = `calc(50% + ${planet.x + 50}px)`;
-    popup.style.top = `calc(50% + ${planet.y}px)`;
-  });
+  el.addEventListener("mouseenter", () => popup.classList.add("show"));
+  el.addEventListener("mouseleave", () => popup.classList.remove("show"));
 
-  // Hide popup when mouse leaves
-el.addEventListener("click", () => {
-  popup.style.left = el.style.left;
-  popup.style.top = el.style.top;
-  popup.classList.add("show");
+  el.addEventListener("mousemove", (e) => {
+    popup.style.left = `${e.pageX + 15}px`;
+    popup.style.top = `${e.pageY - 20}px`;
   });
-  
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".planet") && !e.target.closest(".popup")) {
-    popup.classList.remove("show");
-  }
 });
+
 
 });
