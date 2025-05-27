@@ -25,8 +25,18 @@ body {
   box-shadow: 0 0 60px 30px rgba(255, 204, 0, 0.5);
   transform: translate(-50%, -50%);
   animation: pulse 4s infinite ease-in-out;
-  z-index: 1;
-  cursor: pointer;
+  z-index: 2;
+}
+
+#sun iframe {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 180px;
+  border: none;
+  z-index: 3;
 }
 
 @keyframes pulse {
@@ -51,7 +61,17 @@ body {
   left: 50%;
   transform-origin: center;
   pointer-events: none;
-  animation-timing-function: linear;
+}
+
+.orbit::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: 0;
+  left: 0;
 }
 
 .orbit .planet {
@@ -71,15 +91,10 @@ body {
   }
 }
 
-.orbit::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 1px dashed rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  top: 0;
-  left: 0;
+/* ORBITING ROTATION */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .planet {
@@ -97,7 +112,6 @@ body {
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 70%);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  pointer-events: auto;
   cursor: pointer;
 }
 
@@ -137,34 +151,5 @@ body {
   margin-top: 12px;
   animation: pulse 1.5s infinite;
   filter: drop-shadow(0 0 5px #00ffcc);
-  cursor: pointer;
-}
-
-#sun-video-popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.9);
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 90vw;
-  z-index: 100;
-  display: none;
-  text-align: center;
-}
-
-#sun-video-popup.show {
-  display: block;
-}
-
-#sun-video-popup button {
-  margin-top: 12px;
-  padding: 8px 14px;
-  font-weight: bold;
-  border: none;
-  background: #ffd966;
-  color: #000;
-  border-radius: 6px;
   cursor: pointer;
 }
