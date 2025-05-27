@@ -134,5 +134,4 @@ planets.forEach((planet, index) => {
   });
 });
 
-});
 
