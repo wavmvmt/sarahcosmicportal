@@ -104,26 +104,27 @@ planets.forEach((planet, index) => {
   el.textContent = planet.name;
   container.appendChild(el);
 
+  // Create a popup per planet
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = `
-    <strong>${planet.name}</strong><br/>
+    <strong>${planet.name}</strong><br>
     <em>${planet.message}</em>
     <ul>${planet.offerings.map(o => `<li>${o}</li>`).join("")}</ul>
     <img src="phone_icon.png" class="phone-icon" title="Book your free 15min call">
   `;
   container.appendChild(popup);
 
-  el.addEventListener("mouseover", () => {
+  // Show popup on hover
+  el.addEventListener("mouseenter", () => {
     popup.classList.add("show");
+    popup.style.left = `calc(50% + ${planet.x + 50}px)`;
+    popup.style.top = `calc(50% + ${planet.y}px)`;
   });
 
-  el.addEventListener("mouseout", () => {
+  // Hide popup when mouse leaves
+  el.addEventListener("mouseleave", () => {
     popup.classList.remove("show");
   });
-
-  el.addEventListener("mousemove", (e) => {
-    popup.style.left = `${e.pageX + 15}px`;
-    popup.style.top = `${e.pageY - 20}px`;
-  });
 });
+
