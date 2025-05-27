@@ -123,8 +123,10 @@ planets.forEach((planet, index) => {
   });
 
   // Hide popup when mouse leaves
-  el.addEventListener("mouseleave", () => {
-    popup.classList.remove("show");
+el.addEventListener("click", () => {
+  popup.style.left = el.style.left;
+  popup.style.top = el.style.top;
+  popup.classList.add("show");
   });
 });
 
