@@ -1,16 +1,12 @@
-
-const planets = document.querySelectorAll('.planet');
-const popup = document.getElementById('popup');
-const closeBtn = document.getElementById('closePopup');
-
-planets.forEach(planet => {
-  planet.addEventListener('click', (e) => {
-    popup.style.display = 'block';
-    popup.style.left = `${e.pageX + 10}px`;
-    popup.style.top = `${e.pageY - 20}px`;
+document.querySelectorAll('.planet').forEach(planet => {
+  planet.addEventListener('click', () => {
+    const popup = document.getElementById('popup');
+    popup.style.left = `${planet.offsetLeft + 50}px`;
+    popup.style.top = `${planet.offsetTop}px`;
+    popup.classList.remove('hidden');
   });
 });
 
-closeBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
-});
+function closePopup() {
+  document.getElementById('popup').classList.add('hidden');
+}

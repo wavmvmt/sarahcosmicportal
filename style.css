@@ -1,43 +1,66 @@
-
 body {
   margin: 0;
-  height: 100vh;
-  background: url('background.png') no-repeat center center;
-  background-size: cover;
+  font-family: sans-serif;
+  background: url('background.png') center/cover no-repeat;
   overflow: hidden;
-  font-family: 'Arial', sans-serif;
+}
+
+#universe {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
 .sun {
   position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ffcc00, #ff9900);
+  border-radius: 50%;
   top: 50%;
   left: 50%;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, #ffcc33, #ff9900);
-  border-radius: 50%;
-  box-shadow: 0 0 40px 20px rgba(255, 153, 0, 0.6);
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px 20px rgba(255, 153, 0, 0.6);
 }
 
 .planet {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: rgba(0, 255, 255, 0.8);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 255, 255, 0.7);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-align: center;
+  line-height: 80px;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
 }
 
 .popup {
   position: absolute;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  padding: 15px;
+  top: 40%;
+  left: 40%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  color: #000;
+  text-align: center;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.hidden {
   display: none;
-  z-index: 100;
+}
+
+.phone-icon {
+  width: 50px;
+  animation: vibrate 0.6s infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes vibrate {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
