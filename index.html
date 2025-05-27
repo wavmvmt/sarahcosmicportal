@@ -3,27 +3,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sarah's Cosmic Portal</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah's 3D Cosmic Portal</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: radial-gradient(ellipse at center, #ffe6f0, #fbeaff, #ffe6f0); }
+    canvas { display: block; }
+  </style>
 </head>
 <body>
-  <div id="background"></div>
-  <div class="sun"></div>
-  <canvas id="particles"></canvas>
-  <div id="planet-container">
-    <div class="planet mercury"></div>
-    <div class="planet venus"></div>
-    <div class="planet earth"></div>
-    <div class="planet mars"></div>
-    <div class="planet jupiter"></div>
-    <div class="planet saturn"></div>
-    <div class="planet uranus"></div>
-    <div class="planet neptune"></div>
-    <div class="planet pluto"></div>
-    <div class="planet moon"></div>
-    <div class="planet chiron"></div>
-  </div>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
