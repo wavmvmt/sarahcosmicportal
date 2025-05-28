@@ -14,14 +14,25 @@
     <div id="planet-container"></div>
   </div>
 
+  <!-- Planet Info Modal -->
+  <div id="planet-modal" class="modal">
+    <div class="modal-content">
+      <h2 id="planet-title"></h2>
+      <p id="planet-tooltip"></p>
+      <a id="calendly-link" href="https://calendly.com/sarahradams2024" target="_blank" class="calendly-button">📞 Book a Free Call</a>
+      <button onclick="closePlanetModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- YouTube Modal -->
   <div id="video-modal" class="modal">
     <div class="modal-content">
       <h2>Cosmic Detox Explanation</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/fQXZAOBHIKE?start=513" frameborder="0" allowfullscreen></iframe>
-      <button onclick="closeModal()">Close</button>
+      <button onclick="closeVideoModal()">Close</button>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html> 
+</html>
