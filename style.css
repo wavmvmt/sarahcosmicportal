@@ -47,7 +47,6 @@ body {
   left: 50%;
   transform-origin: center;
   pointer-events: none;
-  animation-timing-function: linear;
 }
 
 .orbit::before {
@@ -89,12 +88,12 @@ body {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   pointer-events: auto;
+  cursor: pointer;
 }
 
 .planet:hover {
   transform: scale(1.08);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.3);
-  cursor: pointer;
 }
 
 .modal {
@@ -114,4 +113,22 @@ body {
   max-width: 90vw;
   max-height: 90vh;
   text-align: center;
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #fff;
+}
+
+.calendly-button {
+  display: inline-block;
+  margin-top: 10px;
+  background: #000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.calendly-button:hover {
+  background: #333;
 }
