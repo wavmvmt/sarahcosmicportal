@@ -2,7 +2,7 @@ const planets = [
   { name: "22K Package", color: "#fcbf49", tooltip: "💰 Jupiter: Expansion & Abundance" },
   { name: "Calendar", color: "#dcd6f7", tooltip: "📅 Saturn: Sacred Time Container" },
   { name: "Back Home", color: "#49baff", tooltip: "🏠 Earth: Embodiment & Peace" },
-  { name: "Super Human Training", color: "#ff6b6b", tooltip: "💪 Mars: Vitality, Strength" },
+  { name: "Super Human Training", color: "#ff6b6b", tooltip: "💪 Mars: Vitality & Strength" },
   { name: "About Sarah", color: "#ffd966", tooltip: "🌞 Sun: Radiant Essence" },
   { name: "Coach Path", color: "#00ffcc", tooltip: "📘 Chiron: Healing Journey" },
   { name: "Meet the ETs", color: "#93b7ff", tooltip: "👽 Neptune: Galactic Connection" },
@@ -29,17 +29,29 @@ planets.forEach((planet, index) => {
   const el = document.createElement("div");
   el.classList.add("planet");
   el.style.background = planet.color;
-  el.title = planet.tooltip;
   el.textContent = planet.name;
+
+  el.addEventListener("click", () => {
+    document.getElementById("planet-title").textContent = planet.name;
+    document.getElementById("planet-tooltip").textContent = planet.tooltip;
+    document.getElementById("planet-modal").style.display = "flex";
+  });
 
   orbit.appendChild(el);
   container.appendChild(orbit);
+
+  orbit.style.animationName = "rotate";
+  orbit.style.animationDuration = `${40 + index * 5}s`;
 });
 
-// YouTube modal
 sun.addEventListener("click", () => {
   document.getElementById("video-modal").style.display = "flex";
 });
-function closeModal() {
+
+function closeVideoModal() {
   document.getElementById("video-modal").style.display = "none";
-}   
+}
+
+function closePlanetModal() {
+  document.getElementById("planet-modal").style.display = "none";
+}
